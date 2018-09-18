@@ -14,6 +14,17 @@ let users = {
   }
 };
 
+let messages = {
+  1: {
+    id: '1',
+    text: 'Hello World',
+  },
+  2: {
+    id: '2',
+    text: 'Bye World',
+  },
+};
+
 const app = express();
 
 app.use(cors());
@@ -23,19 +34,29 @@ const schema = gql`
     users: [User!]
     me: User
     user(id: ID!): User
+
+    messages: [Message!]!
+    message(id: ID!): Message!
   }
 
   type User {
     id: ID!
     username: String!
   }
+
+  type Message {
+    id: ID!
+    text: String!
+  }
 `;
 
 const resolvers = {
   Query: {
     users: () => Object.values(users),
+    me: (parent, args, { me }) => me,
     user: (parent, { id }) => users[id],
-    me: (parent, args, { me }) => me
+    messages: () => Object.values(messages),
+    message: (parent, { id }) => messages[id]
   }
 };
 
