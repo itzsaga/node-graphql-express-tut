@@ -1,12 +1,20 @@
 {
   "name": "node-graphql-express-tut",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Seth <seth.alexander@pm.me> (sethalexander.me)",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itzsaga/node-graphql-express-tut.git"
+  },
+  "bugs": {
+    "url": "https://github.com/itzsaga/node-graphql-express-tut/issues"
+  },
+  "homepage": "https://github.com/itzsaga/node-graphql-express-tut#readme",
+  "description": ""
 }
